@@ -10,6 +10,7 @@
 #define JSRING
 
 #include <array>
+#include <memory>
 
 namespace jsring {
 
