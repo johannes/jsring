@@ -7,7 +7,7 @@ template <typename T, T max, T min = 0> class wrapping_integer {
   T _value;
 
 public:
-  constexpr wrapping_integer(T t= 0) noexcept : _value{t} {}
+  constexpr wrapping_integer(T t = 0) noexcept : _value{t} {}
 
   wrapping_integer operator--() {
     if (_value == min) {
@@ -27,7 +27,7 @@ public:
     return *this;
   }
 
-  wrapping_integer operator+(T t) const {
+  constexpr wrapping_integer operator+(T t) const {
     t += _value;
     while (t > max) {
       t -= max + 1;
@@ -35,15 +35,15 @@ public:
     return t;
   }
 
-  wrapping_integer operator-(T t) const {
-    t = (t > _value) ? t-_value : _value - t;
+  constexpr wrapping_integer operator-(T t) const {
+    t = (t > _value) ? t - _value : _value - t;
     while (t > max) {
       t -= max + 1;
     }
     return t;
   }
 
-  operator T() const { return _value; }
+  constexpr operator T() const { return _value; }
 };
 
 template <typename T, std::size_t N> class ring {
