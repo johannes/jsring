@@ -1,3 +1,11 @@
+/*
+ * JSRING
+ *
+ * Copyright 2018 Johannes Schlüter
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "jsring.h"
