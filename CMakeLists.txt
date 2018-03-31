@@ -54,7 +54,7 @@ if(NOT CLANG_TIDY_EXE)
   message(STATUS "clang-tidy not found.")
 else()
   message(STATUS "clang-tidy found: ${CLANG_TIDY_EXE}")
-  set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}")
+  #set(DO_CLANG_TIDY "${CLANG_TIDY_EXE}")
 endif()
 
 add_subdirectory(test)
