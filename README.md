@@ -24,7 +24,7 @@ This will print
 
     0 2 3 4 5 6 7 8 9 10 11
 
-See the [tests](tests/main.cpp) for more examples.
+See the [tests](test/main.cpp) for more examples.
 
 Installation
 ------------
