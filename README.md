@@ -14,6 +14,7 @@ Usage
 
 jsring::ring<int, 10> ring{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 ring.push_back(11);
+ring.push_back(12);
 ring.push_front(0);
 
 for (auto i : ring) {
@@ -24,7 +25,7 @@ std::cout << '\n';
 
 This will print
 
-    0 2 3 4 5 6 7 8 9 10 11
+    0 3 4 5 6 7 8 9 10 11
 
 See the [tests](test/main.cpp) for more examples.
 
