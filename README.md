@@ -3,7 +3,7 @@ jsring - A toy ring buffer
 
 [![Build Status](https://travis-ci.org/johannes/jsring.svg?branch=master)](https://travis-ci.org/johannes/jsring)
 
-This is a simple implementation of a ring buffer with a compile-time defined size. This is an weekend afternoon hack and not supposed to be used in production. There certainly are more robust/efficient/... implementations.
+This is a simple implementation of a ring buffer with a compile-time defined size. This is an saturday afternoon hack and not supposed to be used in production and maybe wll never be touched again. There certainly are more robust/efficient/... implementations.
 
 Usage
 -----
@@ -34,12 +34,22 @@ Installation
 
 All code is included in `include/jsring.h`. Also a `CMakeLists.txt` is provided which allows installation using CMake. After installing other projects can add a dependency via
 
+Assuming you have cmake and a C++14 compiler you could install it like this:
+```sh
+git clone git@github.com:johannes/jsring.git
+cd jsring
+cmake .
+make install
+```
+
+In a different project you can include it from your `CMakeLists.txt` like this:
+
 ```cmake
 find_package(jsring CONFIG REQUIRED)
 target_link_libraries(YourApp jsring)
 ```
 
-Tests are using GTest. CMake will load this dependency when needed.
+Tests are using GTest. CMake will load this dependency when needed. For testing you can use either `ctest` or run the more vebose test binary `testjsring` after running `make`.
 
 License
 -------
