@@ -1,6 +1,8 @@
 jsring - A toy ring buffer
 ==========================
 
+[![Build Status](https://travis-ci.org/johannes/jsring.svg?branch=master)](https://travis-ci.org/johannes/jsring)
+
 This is a simple implementation of a ring buffer with a compile-time defined size. This is an weekend afternoon hack and not supposed to be used in production. There certainly are more robust/efficient/... implementations.
 
 Usage
