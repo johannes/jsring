@@ -82,6 +82,13 @@ TEST(construct, iterator_bigger_than_size) {
   EXPECT_EQ(ring[1], 4);
 }
 
+TEST(construct, initializer_list) {
+  jsring::ring<int, 2> ring{1, 2, 3};
+  EXPECT_EQ(ring.size(), 2);
+  EXPECT_EQ(ring[0], 2);
+  EXPECT_EQ(ring[1], 3);
+}
+
 TEST(modify, pop_back) {
   jsring::ring<int, 2> ring{1, 2};
 
