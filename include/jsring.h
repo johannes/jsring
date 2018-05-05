@@ -15,7 +15,7 @@
 namespace jsring {
 
 template <typename T, T max, T min = 0> class wrapping_integer {
-  static_assert(std::is_integral<T>::value, "The typemust be an ntegral type");
+  static_assert(std::is_integral<T>::value, "The type must be an integral type");
   T _value;
 
 public:
@@ -59,7 +59,7 @@ public:
 };
 
 template <typename T, std::size_t N> class ring {
-  static_assert(N > 0, "The jsring::ring size has to be positive");
+  static_assert(N > 0, "The js::ring size has to be positive");
 
 public:
   using value_type = T;
