@@ -10,6 +10,7 @@
 #define JSRING
 
 #include <array>
+#include <iterator>
 #include <memory>
 
 namespace jsring {
@@ -90,7 +91,8 @@ private:
   }
 
 public:
-  class iterator {
+  class iterator : public std::iterator<std::bidirectional_iterator_tag, T,
+                                        difference_type, pointer, reference> {
     ring<value_type, N> *_r;
     size_type _pos;
 
@@ -300,4 +302,20 @@ class tuple_element<I, ::jsring::ring<T, N>> {
   using type = T;
 };
 }
+
+static_assert(
+    std::is_same<std::iterator_traits<
+                     jsring::ring<int, 23>::iterator>::iterator_category,
+                 std::bidirectional_iterator_tag>::value == true,
+    "Iterator category traits not matching");
+static_assert(
+    std::is_same<
+        std::iterator_traits<jsring::ring<int, 23>::iterator>::difference_type,
+        size_t>::value == true,
+    "Iterator difference_type traits not matching");
+static_assert(
+    std::is_same<
+        std::iterator_traits<jsring::ring<int, 23>::iterator>::value_type,
+        int>::value == true,
+    "Iterator value_type traits not matching");
 #endif
